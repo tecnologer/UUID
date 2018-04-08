@@ -5,8 +5,4 @@ os:
 go:
   - "1.10.x"
   - master
-
-before_install:
-  - export GOPATH=$HOME/gopath
-  - export PATH=$HOME/gopath/bin:$PATH
-  - go get -u github.com/tecnologer/uuid
+go_import_path: github.com/tecnologer/uuid
