@@ -35,7 +35,6 @@ func main() {
 		f.WriteString(fmt.Sprintf("%s\n", UUID.GetUUID()))
 	}
 
-	fmt.Println(*testresults)
 	if *testresults {
 		fmt.Println("Testing results.")
 		_ = testResults()
