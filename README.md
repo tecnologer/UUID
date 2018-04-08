@@ -26,6 +26,6 @@ Fuente: [Wikipedia][1]
         myUUID := UUID.GetUUID()
         fmt.Println(myUUID)
     }
-    ```
+3. Resultado (debe de ser diferente): `5e94bfea-94bf-02f9-945e-300180000134`
 
 [1]: <https://es.wikipedia.org/wiki/Identificador_%C3%BAnico_universal>
