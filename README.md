@@ -14,12 +14,13 @@ Fuente: [Wikipedia][1]
 
 ## Uso
 
-1. Descargarlo: `go get -u github.com/tecnologer/UUID`
+1. Descargarlo: `go get -u github.com/tecnologer/uuid`
 2. Usarlo en tu codigo
     ```Go
+    package main
     import(
         "fmt"
-        "github.com/tecnologer/UUID"
+        "github.com/tecnologer/uuid"
     )
 
     func main(){
