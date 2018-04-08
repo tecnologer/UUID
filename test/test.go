@@ -13,9 +13,11 @@ import (
 
 const fileName = "results.txt"
 
-var testresults = flag.Bool("t", true, "Check if exists some results are duplicated")
+var testresults = flag.Bool("t", false, "Check if exists some results are duplicated")
 
 func main() {
+	flag.Parse()
+
 	var f *os.File
 	var err error
 	//fmt.Println(UUID.GetUUID())
