@@ -5,6 +5,7 @@ import (
 	"encoding/binary"
 	"encoding/hex"
 	"fmt"
+	"math/rand"
 	"net"
 	"strings"
 	"sync/atomic"
@@ -57,7 +58,17 @@ func getClockSeq(s int64) string {
 }
 func getNode() string {
 	mac := getMacAddr()
-	return strings.Replace(mac, ":", "", -1)
+	macArray, _ := hex.DecodeString(mac)
+	for i, v := range macArray {
+		macArray[i] = v & getModifier()
+	}
+
+	return hex.EncodeToString(macArray)
+}
+
+func getModifier() byte {
+	rand.Seed(time.Now().UnixNano())
+	return byte(rand.Intn(255-0) + 0)
 }
 
 // getMacAddr gets the MAC hardware
@@ -68,7 +79,7 @@ func getMacAddr() (addr string) {
 		for _, i := range interfaces {
 			if i.Flags&net.FlagUp != 0 && bytes.Compare(i.HardwareAddr, nil) != 0 {
 				// Don't use random as we have a real address
-				addr = i.HardwareAddr.String()
+				addr = strings.Replace(i.HardwareAddr.String(), ":", "", -1)
 				break
 			}
 		}
