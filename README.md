@@ -1,5 +1,4 @@
-# UUID
-
+# UUID [![Build Status](https://travis-ci.org/Tecnologer/UUID.svg?branch=master)](https://travis-ci.org/Tecnologer/UUID)
 Generador de UUID
 
 ## Definicion
