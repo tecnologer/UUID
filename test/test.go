@@ -8,7 +8,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/tecnologer/UUID"
+	"github.com/tecnologer/uuid"
 )
 
 const fileName = "results.txt"
