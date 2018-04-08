@@ -10,6 +10,8 @@ Un identificador único universal o universally unique identifier (UUID) es un n
 
 Un UUID puede ser usado también con un identificador específico "intencionalmente" y repetidamente usado para identificar la misma cosa en diferentes contextos. Por ejemplo, en Microsoft Component Object Model, todos los componentes deben implementar la interfaz IUnknown (interfaz desconocido), que es realizado creando un UUID representante de IUnknow. En todos los casos cuando IUnknown es usado, ya sea usado por un proceso intentando acceder a la interfaz IUnknow en un componente, o por un componente implementando la interfaz IUnknown, siempre es referenciado por el mismo identificador:
 
+Fuente: [Wikipedia][1]
+
 ## Uso
 
 1. Descargarlo: `go get -u github.com/tecnologer/UUID`
@@ -24,7 +26,6 @@ Un UUID puede ser usado también con un identificador específico "intencionalme
         myUUID := UUID.GetUUID()
         fmt.Println(myUUID)
     }
-    ```
+3. Resultado (debe de ser diferente): `5e94bfea-94bf-02f9-945e-300180000134`
 
-Fuente: [Wikipedia][1]
 [1]: <https://es.wikipedia.org/wiki/Identificador_%C3%BAnico_universal>
