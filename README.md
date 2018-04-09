@@ -39,6 +39,10 @@ Fuente: [Wikipedia][1], [Tabla][2]
 
 ## Correr pruebas
 
+1. Primero hay que clonar el repositorio en `$GOPATH/src/github.com/tecnologer`<br>
+    `git clone https://github.com/Tecnologer/UUID.git uuid`
+2. Entrar a la carpeta del repositorio: <br>`cd $GOPATH/src/github.com/tecnologer/uuid`
+
 Las pruebas generan N numero de UUID y se puede elegir si se quieren comparar sus resultados, asi como tambien elegir el valor de N. Los resultados de la prueba quedaran en el archivo `results.txt`.
 1. Correr pruebas definiendo el numero de UUID a generar, N tomara el valor de `1000`:<br>
    `go run test/test.go -c 1000`
