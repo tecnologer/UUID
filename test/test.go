@@ -14,6 +14,7 @@ import (
 const fileName = "results.txt"
 
 var testresults = flag.Bool("t", false, "Check if exists some results are duplicated")
+var count = flag.Int("c", 0, "Number of UUID to generate in the current test")
 
 func main() {
 	flag.Parse()
@@ -28,8 +29,11 @@ func main() {
 	}
 	defer f.Close()
 
-	rand.Seed(time.Now().UnixNano())
-	max := rand.Intn(100-10) + 10
+	max := *count
+	if max == 0 {
+		rand.Seed(time.Now().UnixNano())
+		max = rand.Intn(100-10) + 10
+	}
 
 	for i := 0; i < max; i++ {
 		f.WriteString(fmt.Sprintf("%s\n", UUID.GetUUID()))
