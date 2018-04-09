@@ -37,5 +37,16 @@ Fuente: [Wikipedia][1], [Tabla][2]
     }
 3. Resultado (debe de ser diferente): `5e94bfea-94bf-02f9-945e-300180000134`
 
+## Correr pruebas
+
+Las pruebas generan N numero de UUID y se puede elegir si se quieren comparar sus resultados, asi como tambien elegir el valor de N. Los resultados de la prueba quedaran en el archivo `results.txt`.
+1. Correr pruebas definiendo el numero de UUID a generar, N tomara el valor de `1000`:<br>
+   `go run test/test.go -c 1000`
+2. Al finalizar las pruebas se puede indicar si quiere que se comparen los resultados almacenados en `results.txt`, para esto basta agregar la bander `-t` al momento de ejecutarlo.<br>
+    `go run test/test.go -t`
+3. Se pueden combinar ambas banderas y su orden no afecta la ejecucion.<br>
+    `go run test/test.go -c 1000 -t`<br>
+    `go run test/test.go -t -c 500`<br>
+
 [1]: <https://es.wikipedia.org/wiki/Identificador_%C3%BAnico_universal>
 [2]: <https://en.wikipedia.org/wiki/Universally_unique_identifier#Format>
