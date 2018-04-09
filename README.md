@@ -9,7 +9,16 @@ Un identificador único universal o universally unique identifier (UUID) es un n
 
 Un UUID puede ser usado también con un identificador específico "intencionalmente" y repetidamente usado para identificar la misma cosa en diferentes contextos. Por ejemplo, en Microsoft Component Object Model, todos los componentes deben implementar la interfaz IUnknown (interfaz desconocido), que es realizado creando un UUID representante de IUnknow. En todos los casos cuando IUnknown es usado, ya sea usado por un proceso intentando acceder a la interfaz IUnknow en un componente, o por un componente implementando la interfaz IUnknown, siempre es referenciado por el mismo identificador:
 
-Fuente: [Wikipedia][1]
+| Name	   | Length (bytes)	| Length (hex digits)	| Contents
+|----------|----------------|-----------------------|-------------------------------|
+| time_low |4	            | 8	                    | Entero obtenido de los 32 primeros bits del tiempo|
+| time_mid | 2	            | 4	                    | Entero obtenido de los 16 bits del medio del tiempo|
+| time_hi_and_version	| 2	| 4	                    | 4-bit para la "version" en los bits mas importantes, seguido de los 12 bits de la parte superior del tiempo|
+| clock_seq_hi_and_res clock_seq_low|	2	|4	| 1-3 bit de la "variante" en los bits mas importantes, seguido por los 13-15 bit de la secuencia del reloj|
+node	|6	|12	|los 48 bits del identificador del nodo|
+
+
+Fuente: [Wikipedia][1], [Tabla][2]
 
 ## Uso
 
@@ -29,3 +38,4 @@ Fuente: [Wikipedia][1]
 3. Resultado (debe de ser diferente): `5e94bfea-94bf-02f9-945e-300180000134`
 
 [1]: <https://es.wikipedia.org/wiki/Identificador_%C3%BAnico_universal>
+[2]: <https://en.wikipedia.org/wiki/Universally_unique_identifier#Format>
